@@ -22,7 +22,7 @@
 	<link rel="shortcut icon" href="assets/ico/favicon.png">
 </head>
 
-<body ng-app="app">
+<body>
 	<!-- WRAPPER -->
 	<div class="wrapper">
 		<!-- NAVBAR -->
@@ -45,24 +45,18 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">主页 <i class="fa fa-angle-down"></i></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="index.html">主页</a></li>
-								
-								
 							</ul>
 						</li>
 						<li class="dropdown ">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">明曦简介   <i class="fa fa-angle-down"></i></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="page-about-us.html">明曦简介</a></li>
-								
-								
 							</ul>
 						</li>
 						<li class="dropdown ">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">团队成员 <i class="fa fa-angle-down"></i></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="page-pricing-tables.html">团队成员</a></li>
-								
-								
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -70,9 +64,7 @@
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="page-services.html">明曦CTA1号</a></li>
 								<li><a href="page-support.html">明曦-礼瀚FOF1号</a></li>
-								
 							</ul>
-							
 						</li>
 						<li class="dropdown ">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">招贤纳士 <i class="fa fa-angle-down"></i></a>
@@ -81,8 +73,11 @@
 								<li><a href="portfolio-3-columns.html">量化投资套利策略研究员</a></li>
 							</ul>
 						</li>
-                        <li class = "nav navbar-nav"> 
+                        
+						<li class = "nav navbar-nav"> 
                             <ul class="breadcrumb" id="denglu">
+                                
+                                
                             </ul>
                         </li>
 					</ul>
@@ -94,33 +89,37 @@
 		<!-- BREADCRUMBS -->
 		<div class="page-header">
 			<div class="container">
-				<h1 class="page-title pull-left" style="font-family:Microsoft YaHei"><strong>明曦产品</strong></h1>
-				
+				<h1 class="page-title pull-left" style="font-family:Microsoft YaHei"><strong>登录</strong></h1>
 			</div>
 		</div>
+
 		<!-- END BREADCRUMBS -->
 		<!-- PAGE CONTENT -->
 		
-		<div class="page-content" ng-controller="data">
-			<div class="container-fluid">
-                <div class="row">
-                    <ul class="nav nav-tabs nav-stacked col-md-3" style="float: left">
-                        <li class="active"><a href="#FOF1" data-toggle="tab">明曦-礼瀚FOF1号</a></li>
-                        <li><a href="#CTA1" data-toggle="tab">明曦CTA1号</a></li>
-                    </ul>
-                    
-                    <div class="tab-content col-md-9" style="float: right;">  
-                        <div ng-view>
-                        </div>    
+		<div class="page-content">
+			<div class="container">
+                    <form class="col-md-6" data-toggle="validator" style="margin:0 auto;float:none;" id="signin" >
+                        <div class="form-group">
+                            <label for="name">用户名:</label>
+                            <input type="text" class="form-control" id="name" name="name" data-error="用户名不能为空！" placeholder="请输入..." required>
+                            <div class="help-block with-errors"></div>
                         </div>
-                    </div>
-                </div>
+                        <div class="form-group">
+                            <label for="pwd">密码:</label>
+                            <input type="password" class="form-control" id="pwd" name="pwd"  data-error="密码不能为空！" placeholder="请输入..." required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <a style="float:left;" href="signup.html">
+					        现在注册
+					    </a>
+                        <button type="submit" class="btn btn-primary" style="float:right;" >
+					        登录
+					    </button>
+                    </form>
+                
 			</div>
-            
 		</div>
-		<!-- END PAGE CONTENT -->
         
-
 		<!-- FOOTER -->
 		<footer>
 			<div class="container">
@@ -134,6 +133,7 @@
 						<!-- COLUMN 2 -->
 						<address class="margin-bottom-30px">
 							<ul class="list-unstyled">
+								
 								<li>联系电话: 0571-56570410</li>
 								<li>&nbsp;&nbsp;</li>
 								<li>联系邮箱: contact@mingxifund.com</li>
@@ -157,56 +157,35 @@
 	</div>
 	<!-- END WRAPPER -->
 	<!-- JAVASCRIPTS -->
-    <div>
-        
-    </div>
 	<script src="assets/js/jquery-2.1.1.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
 	<script src="assets/js/plugins/autohidingnavbar/jquery.bootstrap-autohidingnavbar.min.js"></script>
 	<script src="assets/js/repute-scripts.js"></script>
-    <script language="javascript" type="text/javascript" src="assets/js/highcharts.js"></script>
-    <script language="javascript" type="text/javascript" src="assets/js/exporting.js"></script>
-    <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
-    <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-route.min.js"></script>
-	<script language="javascript">
-    "use strict"
-        var app = angular.module('app',['ngRoute']);
-            app.config(function($httpProvider) {
-                $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-            }); 
-            app.config(function($interpolateProvider) {
-                $interpolateProvider.startSymbol('{$');
-                $interpolateProvider.endSymbol('$}');
-            });
-            app.config(['$routeProvider',function($routeProvider){
-				$routeProvider
-				.when('/CTA1',{
-					templateUrl:'CTA1.html'
-				})
-                .when('/FOF1',{
-					templateUrl:'FOF1.html'
-				})
-				.otherwise({
-					redirectTo:'/FOF1'
-				});
-			}]);
-            app.controller("data",function($scope,$location){
-                $scope.CTA = function(){
-                    $location.url('/FOF1');
-                };
-                $scope.FOF = function(){
-                    $location.url('/CTA1');
-                };
-            });
-
-    </script>
-    
-	<script language="javascript">
-
-        
-        var parent3 = document.getElementById("Tchart");
-
+    <script language="javascript">
     $(document).ready(function() {
+        $('#signin').submit(function()  
+    　　{
+            $.ajax({
+                url : "/signin/", // the endpoint
+                type : "POST", // http method
+                data : { 
+                        name : $("#name").val(),
+                        pwd : $("#pwd").val()
+                       }, // data sent with the post request
+                success: function (data) {
+                    if(data == 'yes'){
+                        window.location.href = "page-services.html";
+                        //alert("登录成功！");
+                    }
+                    else{
+                        window.location.href = "signin.html";
+                        alert("用户名或密码错误，请重新输入！");
+                    }
+                },
+            });
+        });
+        
         var parent = document.getElementById("denglu");
         
         var deng = document.createElement("li");
@@ -228,7 +207,8 @@
         logoutlink.setAttribute("onclick", "logout()");
         logoutlink.innerHTML = "退出";
         logout.appendChild(logoutlink);
-
+        
+        
         $.ajax({
                 url : "/getlogin/", // the endpoint
                 //type : "POST", // http method
@@ -245,8 +225,6 @@
                     }
                 },
             });
-            
-            
     });
     
     function logout(){  
@@ -257,11 +235,8 @@
                 },
             });
     }  
-
-    function signin(){
-        window.location.href = "signin.html";
-    }
     </script>
+	
 </body>
 
 </html>

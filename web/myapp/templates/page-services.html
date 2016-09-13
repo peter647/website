@@ -13,13 +13,7 @@
 	<link href="assets/css/main.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
 	
-	<!-- IE 9 Fallback-->
-	<!--[if IE 9]>
-		<link href="assets/css/ie.css" rel="stylesheet">
-	<![endif]-->
-	<!-- GOOGLE FONTS -->
-	<link href='http://fonts.useso.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.useso.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300' rel='stylesheet' type='text/css'>
+	
 	<!-- FAVICONS -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/repute144x144.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/repute114x114.png">
@@ -28,8 +22,7 @@
 	<link rel="shortcut icon" href="assets/ico/favicon.png">
 </head>
 
-<body>
-        
+<body ng-app="app">
 	<!-- WRAPPER -->
 	<div class="wrapper">
 		<!-- NAVBAR -->
@@ -72,12 +65,11 @@
 								
 							</ul>
 						</li>
-						<li class="dropdown mega-menu">
+						<li class="dropdown">
 							<a href="#" data-toggle="dropdown">产品介绍 <i class="fa fa-angle-down"></i></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="page-services.html">明曦CTA1号</a></li>
-								<li><a href="page-support.html">明曦FOF1号</a></li>
-								<li><a href="page-terms.html">更多产品</a></li>
+								<li><a href="page-support.html">明曦-礼瀚FOF1号</a></li>
 								
 							</ul>
 							
@@ -87,12 +79,12 @@
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="portfolio-4-columns.html">量化程序员（quantitative developer）/实习生</a></li>
 								<li><a href="portfolio-3-columns.html">量化投资套利策略研究员</a></li>
-								
-								
 							</ul>
 						</li>
-						
-						
+                        <li class = "nav navbar-nav"> 
+                            <ul class="breadcrumb" id="denglu">
+                            </ul>
+                        </li>
 					</ul>
 				</div>
 				<!-- END MAIN NAVIGATION -->
@@ -102,62 +94,33 @@
 		<!-- BREADCRUMBS -->
 		<div class="page-header">
 			<div class="container">
-				<h1 class="page-title pull-left" style="font-family:Microsoft YaHei"><strong>明曦CTA1号</strong></h1>
+				<h1 class="page-title pull-left" style="font-family:Microsoft YaHei"><strong>明曦产品</strong></h1>
 				
 			</div>
 		</div>
 		<!-- END BREADCRUMBS -->
-		
-		
-		
 		<!-- PAGE CONTENT -->
 		
 		<div class="page-content">
-			<div class="container">
-				<section>
-					<p>有关产品的详细信息请通过联系方式联系我们。</p>
-                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                       获取产品信息
-                    </button>
-                </section>
+			<div class="container-fluid">
+                <div class="row">
+                    <ul class="nav nav-tabs nav-stacked col-md-3" style="float: left">
+                        <li class="active"><a href="#CTA1"  data-toggle="tab">明曦CTA1号</a></li>
+                        <li><a href="#FOF1"  data-toggle="tab">明曦-礼瀚FOF1号</a></li>
+                    </ul>
+                    <div class="tab-content col-md-9" style="float: right;">
+                        <div ng-view>
+                        </div>
+                    </div>
+                
+                </div>
 			</div>
+            
 		</div>
+		<!-- END PAGE CONTENT -->
         
-        
-        
-        <!-- 模态框（Modal） -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-           <div class="modal-dialog">
-              <div class="modal-content">
-                 <div class="modal-header">
-                    <button type="button" class="close" 
-                       data-dismiss="modal" aria-hidden="true">
-                          &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                       请输入密码：
-                    </h4>
-                 </div>
-                <form method="POST" id="formadd" name="login">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="pwd">密码:</label>
-							<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" required>
-						</div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" 
-                        data-dismiss="modal">关闭
-                        </button>
-                        <button type="submit" id= "btn" class="btn btn-primary">
-                            确定
-                        </button>
-                    </div>
-                 </form>
-              </div><!-- /.modal-content -->
-            </div>
-        </div><!-- /.modal -->
-        
+
+		<!-- FOOTER -->
 		<footer>
 			<div class="container">
 				<div class="row">
@@ -178,7 +141,6 @@
 								<li>微信公众号：明曦资本</li>
 							</ul>
 						</address>
-						
 					</div>
 					<div class="col-md-4">
 						<img src="assets/img/qrcode_for_gh_e8e8bd0f13ba_430.jpg" height="150" width="150" class="img-responsive" alt="Image Intro">
@@ -197,36 +159,102 @@
 	<!-- JAVASCRIPTS -->
 	<script src="assets/js/jquery-2.1.1.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/plugins/slick/slick.min.js"></script>
 	<script src="assets/js/plugins/autohidingnavbar/jquery.bootstrap-autohidingnavbar.min.js"></script>
 	<script src="assets/js/repute-scripts.js"></script>
+    <script language="javascript" type="text/javascript" src="assets/js/highcharts.js"></script>
+    <script language="javascript" type="text/javascript" src="assets/js/exporting.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.5.8/angular-route.min.js"></script>
     <script language="javascript">
-    $(document).ready(function() {
-        console.log(document.getElementById("pwd").value);
-        $('#formadd').submit(function()  
-    　　{
-            console.log($("#pwd").val());
-            check();
-        });
-        function check(){
-            console.log($("#pwd").val());
-            $.ajax({
-                url : "/CTA1/", // the endpoint
-                type : "POST", // http method
-                data : { pwd : $("#pwd").val()}, // data sent with the post request
+    "use strict"
+        var app = angular.module('app',['ngRoute']);
+            app.config(function($httpProvider) {
+                $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+            }); 
+            app.config(function($interpolateProvider) {
+                $interpolateProvider.startSymbol('{$');
+                $interpolateProvider.endSymbol('$}');
+            });
+            app.config(['$routeProvider',function($routeProvider){
+				$routeProvider
+				.when('/CTA1',{
+					templateUrl:'CTA1.html'
+				})
+                .when('/FOF1',{
+					templateUrl:'FOF1.html'
+				})
+				.otherwise({
+					redirectTo:'/CTA1'
+				});
+			}]);
+            app.controller("data",function($scope,$location){
+                $scope.CTA = function(){
+                    $location.url('/FOF1');
+                };
+                $scope.FOF = function(){
+                    $location.url('/CTA1');
+                };
+            });
+
+    </script>
+	<script language="javascript">
+    
+        
+        var parent = document.getElementById("denglu");
+        
+        var deng = document.createElement("li");
+        var zhu = document.createElement("li");
+        var username = document.createElement("li");
+        var logoutli = document.createElement("li");
+        var denglink = document.createElement("a");
+        var zhulink = document.createElement("a");
+        var logoutlink = document.createElement("a");
+        
+        denglink.setAttribute("href", "signin.html");
+        denglink.innerHTML = "登录";
+        deng.appendChild(denglink);
+        
+        zhulink.setAttribute("href", "signup.html");
+        zhulink.innerHTML = "注册";
+        zhu.appendChild(zhulink);
+        
+        logoutlink.setAttribute("onclick", "logout()");
+        logoutlink.innerHTML = "退出";
+        logoutli.appendChild(logoutlink);
+        
+        $.ajax({
+                url : "/getlogin/", // the endpoint
+                //type : "POST", // http method
+                //data : null, // data sent with the post request
                 success: function (data) {
-                    if(data == 'yes'){
-                        window.location.href = "page-detail.html";
+                    if(data == 'error'){
+                        parent.appendChild(deng);
+                        parent.appendChild(zhu);
                     }
                     else{
-                        alert("密码错误，请重新输入密码！");
+                        username.innerHTML = data;
+                        parent.appendChild(username);
+                        parent.appendChild(logoutli);
                     }
                 },
             });
-        }; 
-    });
+            
+            
+   
+    
+    function logout(){  
+        $.ajax({
+                url : "/logout/", // the endpoint
+                success: function () {
+                    window.location.href = "signin.html";
+                },
+            });
+    };  
+
+    function signin(){
+        window.location.href = "signin.html";
+    };
     </script>
-	
 </body>
 
 </html>
